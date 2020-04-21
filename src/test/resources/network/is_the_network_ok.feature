@@ -16,11 +16,9 @@
 #""
 ## (Comments)
 #Sample Feature Definition Template
-@tag
 Feature: Is the network ok?
   All employees want to know if network is ok
 
-  @tag1
   Scenario: Network is down
     Given network is down
     When employees try to log in
