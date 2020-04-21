@@ -24,8 +24,13 @@ jar {
 sourceSets {
 	main {
 		java {
-			srcDirs = ['src']
+			srcDirs = ['src/app']
 		}	
+	}
+	test {
+		java {
+			srcDirs = ['src/test']
+		}
 	}
 }
 
@@ -40,7 +45,7 @@ task cucumber() {
 	doLast {
 		javaexec {
 			main = "io.cucumber.core.cli.Main"
-			classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.ouput
+			classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
 			args = ['--plugin', 'pretty', '--glue', 'gradle.cucumber', 'src/test/resources' ]
 		}
 	}
